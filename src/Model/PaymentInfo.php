@@ -46,25 +46,25 @@ class PaymentInfo implements IPaymentInfo
      * @param float $cashOnDeliveryPrice
      * @param string $cashOnDeliveryCurrency
      * @param int $cashOnDeliveryVariableSymbol
-     * @param null|string $insuranceCurrency
+     * @param string|null $insuranceCurrency
      * @param float|null $insurancePrice
-     * @param null|string $bankAccount
-     * @param null|string $bankCode
-     * @param null|string $iban
-     * @param null|string $specificSymbol
-     * @param null|string $swift
+     * @param string|null $bankAccount
+     * @param string|null $bankCode
+     * @param string|null $iban
+     * @param string|null $specificSymbol
+     * @param string|null $swift
      */
     public function __construct(
         float $cashOnDeliveryPrice,
         string $cashOnDeliveryCurrency,
         int $cashOnDeliveryVariableSymbol,
-        string $insuranceCurrency = null,
-        float $insurancePrice = null,
-        string $bankAccount = null,
-        string $bankCode = null,
-        string $iban = null,
-        string $specificSymbol = null,
-        string $swift = null
+        ?string $insuranceCurrency = null,
+        ?float $insurancePrice = null,
+        ?string $bankAccount = null,
+        ?string $bankCode = null,
+        ?string $iban = null,
+        ?string $specificSymbol = null,
+        ?string $swift = null
     ) {
         $this->setBankAccount($bankAccount);
         $this->setBankCode($bankCode);
@@ -82,7 +82,7 @@ class PaymentInfo implements IPaymentInfo
     /**
      * @param string|null $bankAccount
      */
-    public function setBankAccount(string $bankAccount = null): void
+    public function setBankAccount(?string $bankAccount = null): void
     {
         $this->bankAccount = $bankAccount;
     }
@@ -91,7 +91,7 @@ class PaymentInfo implements IPaymentInfo
      * @param string|null $bankCode
      * @todo add bank code check
      */
-    public function setBankCode(string $bankCode = null): void
+    public function setBankCode(?string $bankCode = null): void
     {
         $this->bankCode = $bankCode;
     }
@@ -126,18 +126,18 @@ class PaymentInfo implements IPaymentInfo
     }
 
     /**
-     * @param null|string $iban
+     * @param string|null $iban
      */
-    public function setIban(string $iban = null): void
+    public function setIban(?string $iban = null): void
     {
         $this->iban = $iban;
     }
 
     /**
-     * @param null|string $insuranceCurrency
+     * @param string|null $insuranceCurrency
      * @throws WrongDataException
      */
-    public function setInsuranceCurrency(string $insuranceCurrency = null): void
+    public function setInsuranceCurrency(?string $insuranceCurrency = null): void
     {
         if (!is_null($insuranceCurrency) && !in_array($insuranceCurrency, Currency::$list)) {
             throw new WrongDataException(sprintf('Currency Code %s is not supported, use one of %s', $insuranceCurrency, implode(', ', Currency::$list)));
@@ -148,23 +148,23 @@ class PaymentInfo implements IPaymentInfo
     /**
      * @param float|null $insurancePrice
      */
-    public function setInsurancePrice(float $insurancePrice = null): void
+    public function setInsurancePrice(?float $insurancePrice = null): void
     {
         $this->insurancePrice = $insurancePrice;
     }
 
     /**
-     * @param null|string $specificSymbol
+     * @param string|null $specificSymbol
      */
-    public function setSpecificSymbol(string $specificSymbol = null): void
+    public function setSpecificSymbol(?string $specificSymbol = null): void
     {
         $this->specificSymbol = $specificSymbol;
     }
 
     /**
-     * @param null|string $swift
+     * @param string|null $swift
      */
-    public function setSwift(string $swift = null): void
+    public function setSwift(?string $swift = null): void
     {
         $this->swift = $swift;
     }

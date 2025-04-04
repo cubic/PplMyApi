@@ -27,7 +27,7 @@ class PdfLabel implements ILabel
      * @return string
      * @throws \Exception
      */
-    public static function generateLabels(array $packages, $decomposition = LabelDecomposition::FULL, $quarterPosition = LabelPosition::TOP_LEFT, \DateTime $printDate = null)
+    public static function generateLabels(array $packages, $decomposition = LabelDecomposition::FULL, $quarterPosition = LabelPosition::TOP_LEFT, ?\DateTime $printDate = null)
     {
         if (!in_array($decomposition, LabelDecomposition::$list)) {
             throw new WrongDataException(sprintf('unknown $decomposition only %s are allowed', implode(', ', LabelDecomposition::$list)));
@@ -88,7 +88,7 @@ class PdfLabel implements ILabel
      * @param IPackage $package
      * @return \TCPDF
      */
-    public static function generateLabelFull(\TCPDF $pdf, IPackage $package, \DateTime $printDate = null)
+    public static function generateLabelFull(\TCPDF $pdf, IPackage $package, ?\DateTime $printDate = null)
     {
         if ($printDate === null) {
             $printDate = new \DateTime();
@@ -266,7 +266,7 @@ class PdfLabel implements ILabel
      * @return \TCPDF
      * @throws \Exception
      */
-    public static function generateLabelQuarter(\TCPDF $pdf, IPackage $package, $position = LabelPosition::TOP_LEFT, \DateTime $printDate = null)
+    public static function generateLabelQuarter(\TCPDF $pdf, IPackage $package, $position = LabelPosition::TOP_LEFT, ?\DateTime $printDate = null)
     {
         if ($printDate === null) {
             $printDate = new \DateTime();

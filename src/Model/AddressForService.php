@@ -52,11 +52,11 @@ class AddressForService implements IAddressForService
         string $name,
         string $street,
         string $zipCode,
-        string $email = null,
-        string $phone = null,
-        string $contact = null,
+        ?string $email = null,
+        ?string $phone = null,
+        ?string $contact = null,
         string $country = Country::CZ,
-        string $name2 = null,
+        ?string $name2 = null,
         array $flags = []
     ) {
         $this->setServiceAddressType($serviceAddressType);

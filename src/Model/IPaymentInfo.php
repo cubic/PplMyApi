@@ -17,13 +17,13 @@ interface IPaymentInfo
     /**
      * @param string|null $bankAccount
      */
-    public function setBankAccount(string $bankAccount = null): void;
+    public function setBankAccount(?string $bankAccount = null): void;
 
     /**
      * @param string|null $bankCode
      * @todo add bank code check
      */
-    public function setBankCode(string $bankCode = null): void;
+    public function setBankCode(?string $bankCode = null): void;
 
     /**
      * @param string $cashOnDeliveryCurrency
@@ -42,30 +42,30 @@ interface IPaymentInfo
     public function setCashOnDeliveryVariableSymbol(int $cashOnDeliveryVariableSymbol): void;
 
     /**
-     * @param null|string $iban
+     * @param string|null $iban
      */
-    public function setIban(string $iban = null);
+    public function setIban(?string $iban = null);
 
     /**
-     * @param null|string $insuranceCurrency
+     * @param string|null $insuranceCurrency
      * @throws WrongDataException
      */
-    public function setInsuranceCurrency(string $insuranceCurrency = null): void;
+    public function setInsuranceCurrency(?string $insuranceCurrency = null): void;
 
     /**
-     * @param int|null $insurancePrice
+     * @param float|null $insurancePrice
      */
-    public function setInsurancePrice(float $insurancePrice = null): void;
+    public function setInsurancePrice(?float $insurancePrice = null): void;
 
     /**
-     * @param null|string $specificSymbol
+     * @param string|null $specificSymbol
      */
-    public function setSpecificSymbol(string $specificSymbol = null): void;
+    public function setSpecificSymbol(?string $specificSymbol = null): void;
 
     /**
-     * @param null|string $swift
+     * @param string|null $swift
      */
-    public function setSwift(string $swift = null): void;
+    public function setSwift(?string $swift = null): void;
 
     /**
      * @return null|string

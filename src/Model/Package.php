@@ -71,13 +71,13 @@ class Package implements IPackage
      * @param ICityRouting $cityRouting
      * @param ISender|null $sender
      * @param string|null $depoCode code of depo, see Enum\Depo.php
-     * @param null|ISpecialDelivery $specialDelivery
-     * @param null|IPaymentInfo $paymentInfo
+     * @param ISpecialDelivery|null $specialDelivery
+     * @param IPaymentInfo|null $paymentInfo
      * @param IExternalNumber $externalNumbers
      * @param IPackageService $packageServices
      * @param IFlag $flags
-     * @param null|IPalletInfo $palletInfo
-     * @param null|IWeightedPackageInfo $weightedPackageInfo
+     * @param IPalletInfo|null $palletInfo
+     * @param IWeightedPackageInfo|null $weightedPackageInfo
      * @param IPackageSet|null $packageSet
      * @param IAddressForService $addressesForServices
      * @throws WrongDataException
@@ -88,16 +88,16 @@ class Package implements IPackage
         string $note,
         IRecipient $recipient,
         ICityRouting $cityRouting,
-        ISender $sender = null,
-        string $depoCode = null,
-        ISpecialDelivery $specialDelivery = null,
-        IPaymentInfo $paymentInfo = null,
+        ?ISender $sender = null,
+        ?string $depoCode = null,
+        ?ISpecialDelivery $specialDelivery = null,
+        ?IPaymentInfo $paymentInfo = null,
         array $externalNumbers = [],
         array $packageServices = [],
         array $flags = [],
-        IPalletInfo $palletInfo = null,
-        IWeightedPackageInfo $weightedPackageInfo = null,
-        IPackageSet $packageSet = null,
+        ?IPalletInfo $palletInfo = null,
+        ?IWeightedPackageInfo $weightedPackageInfo = null,
+        ?IPackageSet $packageSet = null,
         array $addressesForServices = []
     ) {
         if (in_array($packageProductType, Product::$cashOnDelivery) && is_null($paymentInfo)) {
@@ -178,9 +178,9 @@ class Package implements IPackage
     }
 
     /**
-     * @param ISender $sender
+     * @param ISender|null $sender
      */
-    public function setSender(ISender $sender = null)
+    public function setSender(?ISender $sender = null)
     {
         $this->sender = $sender;
     }
@@ -194,17 +194,17 @@ class Package implements IPackage
     }
 
     /**
-     * @param null|ISpecialDelivery $specialDelivery
+     * @param ISpecialDelivery|null $specialDelivery
      */
-    public function setSpecialDelivery(ISpecialDelivery $specialDelivery = null)
+    public function setSpecialDelivery(?ISpecialDelivery $specialDelivery = null)
     {
         $this->specialDelivery = $specialDelivery;
     }
 
     /**
-     * @param null|IPaymentInfo $paymentInfo
+     * @param IPaymentInfo|null $paymentInfo
      */
-    public function setPaymentInfo(IPaymentInfo $paymentInfo = null)
+    public function setPaymentInfo(?IPaymentInfo $paymentInfo = null)
     {
         $this->paymentInfo = $paymentInfo;
     }
@@ -234,17 +234,17 @@ class Package implements IPackage
     }
 
     /**
-     * @param null|IPalletInfo $palletInfo
+     * @param IPalletInfo|null $palletInfo
      */
-    public function setPalletInfo(IPalletInfo $palletInfo = null)
+    public function setPalletInfo(?IPalletInfo $palletInfo = null)
     {
         $this->palletInfo = $palletInfo;
     }
 
     /**
-     * @param null|IWeightedPackageInfo $weightedPackageInfo
+     * @param IWeightedPackageInfo|null $weightedPackageInfo
      */
-    public function setWeightedPackageInfo(IWeightedPackageInfo $weightedPackageInfo = null)
+    public function setWeightedPackageInfo(?IWeightedPackageInfo $weightedPackageInfo = null)
     {
         $this->weightedPackageInfo = $weightedPackageInfo;
     }

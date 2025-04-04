@@ -24,7 +24,7 @@ class ZplLabel implements ILabel {
      * @return type
      * @throws \InvalidArgumentException
      */
-    public static function generateLabels(array $packages, $decomposition = null, $quarterPosition = null, \DateTime $printDate = null) {
+    public static function generateLabels(array $packages, $decomposition = null, $quarterPosition = null, ?\DateTime $printDate = null) {
         if (!is_null($decomposition)) {
             throw new \InvalidArgumentException('ZplLabel::generateLabels does not support $decomposition');
         }
@@ -52,7 +52,7 @@ class ZplLabel implements ILabel {
      * @param IPackage $package
      * @return string
      */
-    public static function generateLabel(IPackage $package, \DateTime $printDate = null) {
+    public static function generateLabel(IPackage $package, ?\DateTime $printDate = null) {
         if ($printDate === null) {
             $printDate = new \DateTime();
         }
@@ -151,7 +151,7 @@ class ZplLabel implements ILabel {
      * @param $package
      * @throws \Exception
      */
-    public static function generateLabelFull($pdf, $package, \DateTime $printDate = null) {
+    public static function generateLabelFull($pdf, $package, ?\DateTime $printDate = null) {
         throw new NotImplementedException();
     }
 
@@ -161,7 +161,7 @@ class ZplLabel implements ILabel {
      * @param $position
      * @throws \Exception
      */
-    public static function generateLabelQuarter($pdf, $package, $position = null, \DateTime $printDate = null) {
+    public static function generateLabelQuarter($pdf, $package, $position = null, ?\DateTime $printDate = null) {
         throw new NotImplementedException();
     }
 

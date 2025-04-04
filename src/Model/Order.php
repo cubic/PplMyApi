@@ -166,7 +166,7 @@ class Order implements IOrder
     /**
      * @param \DateTimeInterface|null $sendTimeFrom
      */
-    public function setSendTimeFrom(\DateTimeInterface $sendTimeFrom = null)
+    public function setSendTimeFrom(?\DateTimeInterface $sendTimeFrom = null)
     {
         $this->sendTimeFrom = $sendTimeFrom;
     }
@@ -174,7 +174,7 @@ class Order implements IOrder
     /**
      * @param \DateTimeInterface|null $sendTimeTo
      */
-    public function setSendTimeTo(\DateTimeInterface $sendTimeTo = null)
+    public function setSendTimeTo(?\DateTimeInterface $sendTimeTo = null)
     {
         $this->sendTimeTo = $sendTimeTo;
     }

@@ -170,7 +170,7 @@ class Api
      * @throws \Exception
      * @throws WrongDataException
      */
-    public function getParcelShops(string $code = null, string $countryCode = Country::CZ, string $accessPointType = null, bool $activeCardPayment = null, string $city = null, float $latitude = null, float $longitude = null, int $radius = null, string $zipCode = null)
+    public function getParcelShops(?string $code = null, string $countryCode = Country::CZ, ?string $accessPointType = null, ?bool $activeCardPayment = null, ?string $city = null, ?float $latitude = null, ?float $longitude = null, ?int $radius = null, ?string $zipCode = null)
     {
         if (!in_array($countryCode, Country::$list)) {
             throw new WrongDataException(sprintf('Country Code %s is not supported, use one of %s', $countryCode, implode(', ', Country::$list)));
@@ -207,7 +207,7 @@ class Api
      * @throws \Exception
      * @throws WrongDataException
      */
-    public function getCitiesRouting($countryCode = Country::CZ, \DateTimeInterface $dateFrom = null, $zipCode = null, $street = null)
+    public function getCitiesRouting($countryCode = Country::CZ, ?\DateTimeInterface $dateFrom = null, $zipCode = null, $street = null)
     {
         if (!in_array($countryCode, Country::$list)) {
             throw new WrongDataException(sprintf('Country Code %s is not supported, use one of %s', $countryCode, implode(', ', Country::$list)));
@@ -239,7 +239,7 @@ class Api
      * @throws WrongDataException
      * @return mixed
      */
-    public function getPackages($customRefs = null, \DateTimeInterface $dateFrom = null, \DateTimeInterface $dateTo = null, array $packageNumbers = [])
+    public function getPackages($customRefs = null, ?\DateTimeInterface $dateFrom = null, ?\DateTimeInterface $dateTo = null, array $packageNumbers = [])
     {
         if (is_null($customRefs) && is_null($dateFrom) && is_null($dateTo) && empty($packageNumbers)) {
             throw new WrongDataException('At least one parameter must be specified!');

@@ -44,12 +44,12 @@ class SpecialDelivery implements ISpecialDelivery
      */
     public function __construct(
         $parcelShopCode,
-        \DateTimeInterface $deliveryDate = null,
-        \DateTimeInterface $deliveryTimeFrom = null,
-        \DateTimeInterface $deliveryTimeTo = null,
-        \DateTimeInterface $takeDate = null,
-        \DateTimeInterface $takeTimeFrom = null,
-        \DateTimeInterface $takeTimeTo = null
+        ?\DateTimeInterface $deliveryDate = null,
+        ?\DateTimeInterface $deliveryTimeFrom = null,
+        ?\DateTimeInterface $deliveryTimeTo = null,
+        ?\DateTimeInterface $takeDate = null,
+        ?\DateTimeInterface $takeTimeFrom = null,
+        ?\DateTimeInterface $takeTimeTo = null
     ) {
         $this->parcelShopCode = $parcelShopCode;
         $this->deliveryDate = $deliveryDate;

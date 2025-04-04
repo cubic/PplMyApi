@@ -55,12 +55,12 @@ interface IOrder
     /**
      * @param \DateTimeInterface|null $sendTimeFrom
      */
-    public function setSendTimeFrom(\DateTimeInterface $sendTimeFrom = null);
+    public function setSendTimeFrom(?\DateTimeInterface $sendTimeFrom = null);
 
     /**
      * @param \DateTimeInterface|null $sendTimeTo
      */
-    public function setSendTimeTo(\DateTimeInterface $sendTimeTo = null);
+    public function setSendTimeTo(?\DateTimeInterface $sendTimeTo = null);
 
     /**
      * @param ISender $sender

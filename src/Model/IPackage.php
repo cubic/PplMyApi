@@ -48,9 +48,9 @@ interface IPackage
     public function setRecipient(IRecipient $recipient);
 
     /**
-     * @param null|ISpecialDelivery $specialDelivery
+     * @param ISpecialDelivery|null $specialDelivery
      */
-    public function setSpecialDelivery(ISpecialDelivery $specialDelivery = null);
+    public function setSpecialDelivery(?ISpecialDelivery $specialDelivery = null);
 
     /**
      * @param null|IPaymentInfo $paymentInfo
@@ -73,9 +73,9 @@ interface IPackage
     public function setFlags(array $flags);
 
     /**
-     * @param null|IPalletInfo $palletInfo
+     * @param IPalletInfo|null $palletInfo
      */
-    public function setPalletInfo(IPalletInfo $palletInfo = null);
+    public function setPalletInfo(?IPalletInfo $palletInfo = null);
 
     /**
      * @param null|IWeightedPackageInfo $weightedPackageInfo
